@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lockbar Privacy Policy</title><style>
+:root{color-scheme:light dark;--bg:#fff;--fg:#14171a;--mut:#5b6670;--acc:#0a7f4a;--line:#e3e7ea}
+@media (prefers-color-scheme:dark){:root{--bg:#0b0d0e;--fg:#e8ecef;--mut:#98a3ab;--acc:#3ddc84;--line:#23282c}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif}
+main{max-width:720px;margin:0 auto;padding:32px 20px 64px}
+h1{font-size:2rem;line-height:1.2;margin:.2em 0 .3em}h2{font-size:1.25rem;margin:2em 0 .4em;padding-top:.6em;border-top:1px solid var(--line)}
+p,li{margin:.5em 0}ul,ol{padding-left:1.3em}a{color:var(--acc)}small,.mut{color:var(--mut)}
+nav{display:flex;gap:16px;flex-wrap:wrap;font-size:.95rem;margin-bottom:8px}nav a{text-decoration:none}nav .on{font-weight:600;text-decoration:underline}
+code{background:var(--line);padding:1px 5px;border-radius:5px;font-size:.92em}
+footer{margin-top:3em;color:var(--mut);font-size:.9rem}
+</style></head><body><main><nav><a href="/lockbar/privacy/" class=on>Privacy Policy</a><a href="/lockbar/support/">Support</a><a href="/lockbar/ru/privacy/">Русский</a></nav>
+<h1>Lockbar Privacy Policy</h1><p class="mut">Effective October 22, 2026</p>
+<p>Lockbar is made by Mikhail Mukminov ("we"). This policy explains what happens to your information when you use the Lockbar app for iPhone and its Share extension.</p>
+<h2>The short version</h2><ul>
+<li>We <b>do not collect any personal data</b>. We have no servers, no accounts and no analytics, and we show no ads.</li>
+<li>Your photos, the text recognized in them, the scan results and your vault never leave your device unless <b>you</b> export them or save a backup file somewhere.</li>
+<li>Purchases are handled entirely by Apple.</li></ul>
+<h2>What the app does on your device</h2>
+<p><b>Photo scanning.</b> With your permission, the app reads your photo library to find photos that look like identity documents, driver's licenses, payment cards, passwords and recovery codes, crypto wallet recovery phrases and other documents. It uses Apple's on-device frameworks (Vision text recognition). Recognized text is processed in memory and is never saved, logged or sent anywhere.</p>
+<p><b>Intimate photos (optional).</b> If you have turned on Sensitive Content Warning (or Communication Safety) in iOS Settings, the app uses Apple's on-device SensitiveContentAnalysis framework to flag photos that may contain nudity. The analysis runs on your device. Neither we nor Apple receive the photos or the results. If the setting is off, this check does not run.</p>
+<p><b>Scan results.</b> For each photo checked, the app keeps a small encrypted record on your device: the photo's local identifier, the category and confidence of any finding, the detector version, and whether you hid or dismissed it. The record is encrypted with a key that never leaves the device and is excluded from device backups. You can erase it in Settings.</p>
+<p><b>Your vault.</b> Photos and files you move into the vault are encrypted on your device with AES-256-GCM. The key is protected by your PIN and, if you turn it on, by Face ID through the iOS Keychain. Face ID data itself is handled by iOS and is never available to the app. The vault is stored only on this device and is <b>not included in iCloud or iPhone backups</b>.</p>
+<p><b>Deleting originals.</b> After a photo is copied into the vault and the copy is verified, iOS asks you to confirm deleting the original. Deleted originals stay in Recently Deleted in the Photos app for about 30 days.</p>
+<p><b>Share extension.</b> When you share items to Lockbar from another app, they are encrypted immediately and kept in the app's private storage on your device until you next unlock the vault.</p>
+<p><b>Backup files.</b> You can create an encrypted backup file (<code>.vaultbackup</code>). It is saved wherever you choose (for example Files, a computer or a drive) and can be opened only with your recovery key, which only you hold. We never receive your backups or your recovery key.</p>
+<p><b>Preferences.</b> Settings such as auto-lock delay are stored on your device.</p>
+<h2>Purchases</h2>
+<p>Lockbar Pro is sold through Apple's App Store using In-App Purchase. Apple processes the payment and your Apple Account information under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. The app checks your Pro status on your device using Apple's StoreKit. We do not receive your name, email address, payment details or a purchase history linked to you. We see only aggregated sales reports that Apple provides to all developers.</p>
+<h2>Network connections</h2>
+<p>The app does not connect to any server operated by us or by third parties. iOS may connect to Apple's services when you buy or restore a purchase, or when you choose to download originals of photos stored only in iCloud Photos.</p>
+<h2>Crash reports</h2>
+<p>If you have chosen in iOS Settings to share analytics with app developers, Apple may provide us with anonymous crash reports and performance data. They do not contain your photos, text or vault contents. You can turn this off in Settings → Privacy &amp; Security → Analytics &amp; Improvements.</p>
+<h2>What we don't do</h2><ul>
+<li>We do not sell, rent or share any data, because we collect none.</li>
+<li>We do not track you across apps or websites and do not use advertising identifiers.</li>
+<li>We do not use your photos or scan results to train any model.</li></ul>
+<h2>Children</h2><p>The app is not directed at children and collects no data from anyone, including children.</p>
+<h2>Your choices and rights</h2>
+<p>All data the app handles is on your device and under your control. You can change or revoke Photos access in iOS Settings, delete scan results in the app, export or delete vault items, and delete everything by deleting the app. Because we hold no personal data about you, there is nothing for us to access, correct, port or erase on your behalf. If you are in the EU/EEA, the UK or another region with data-protection laws, you can still contact us with any question.</p>
+<p>If you forget your PIN, we cannot recover your vault: no one else has the key. A backup file can be restored with its recovery key.</p>
+<h2>Contact</h2><p>Mikhail Mukminov · <a href="mailto:support-email-not-set@example.invalid">support-email-not-set@example.invalid</a></p>
+<p>If you email us, we use your message and address only to answer you and delete the conversation when it is no longer needed.</p>
+<h2>Changes</h2><p>If this policy changes, we will update the date above and the in-app text. We will never start collecting personal data without saying so clearly in the app and in this policy first.</p>
+<footer>© Mikhail Mukminov</footer></main></body></html>

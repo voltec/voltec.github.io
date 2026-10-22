@@ -11,7 +11,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).parent
 DEVELOPER = "Mikhail Mukminov"
-SUPPORT_EMAIL = ""  # one line to change everywhere
+SUPPORT_EMAIL = "voltec366+lockbar@gmail.com"  # one line to change everywhere
 EFFECTIVE = {"en": "October 22, 2026", "ru": "22 октября 2026"}
 SITE = "https://voltec.github.io"
 

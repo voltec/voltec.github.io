@@ -29,7 +29,7 @@ footer{margin-top:3em;color:var(--mut);font-size:.9rem}
 
 APPS = [("lockbar", "Lockbar", {"en": "Find sensitive photos on your iPhone and lock them in an encrypted vault.",
                                 "ru": "Находит чувствительные фото на iPhone и прячет их в зашифрованный сейф."}),
-        ("channelry", "Channelry", {"en": "A player for your own IPTV playlists on iPhone, iPad and Apple TV.",
+        ("couchdial", "Couchdial", {"en": "A player for your own IPTV playlists on iPhone, iPad and Apple TV.",
                                     "ru": "Плеер для ваших IPTV-плейлистов на iPhone, iPad и Apple TV."})]
 
 T = {  # UI strings
@@ -209,8 +209,8 @@ def lockbar():
     page("lockbar/ru/support", "ru", f"Поддержка {A}", support_ru, "lockbar", "support")
 
 
-def channelry():
-    A = "Channelry"
+def couchdial():
+    A = "Couchdial"
     eff = {"en": "October 27, 2026", "ru": "27 октября 2026"}
     eula = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
     cancel = "https://support.apple.com/118428"
@@ -253,7 +253,7 @@ def channelry():
 <li>In your iCloud: until you delete the source on an iPhone, iPad or Mac, which removes it from all your devices. Deleting a source on Apple TV only hides it there.</li>
 <li>With us: nothing from the app, because nothing from the app reaches us.</li></ul>
 <h2>Your rights</h2>
-<p>Under the GDPR and the UK GDPR you can access, correct, delete, restrict or object to processing of your data, receive it in a portable format and withdraw consent. You can also complain to a data protection authority. The app's data is on your devices and in your iCloud, so you control it directly: edit or delete sources in the app, or delete {A}'s iCloud data (see <a href="/channelry/support/">Support</a>). Apple lets you request a copy of your iCloud data at <a href="https://privacy.apple.com">privacy.apple.com</a>. For anything else, email {mail()}. We reply within one month.</p>
+<p>Under the GDPR and the UK GDPR you can access, correct, delete, restrict or object to processing of your data, receive it in a portable format and withdraw consent. You can also complain to a data protection authority. The app's data is on your devices and in your iCloud, so you control it directly: edit or delete sources in the app, or delete {A}'s iCloud data (see <a href="/couchdial/support/">Support</a>). Apple lets you request a copy of your iCloud data at <a href="https://privacy.apple.com">privacy.apple.com</a>. For anything else, email {mail()}. We reply within one month.</p>
 <p>California and other US states: we don't sell or share personal information, don't use it for targeted advertising and don't use sensitive personal information.</p>
 <h2>Children</h2><p>{A} is not made for children. We don't knowingly collect personal data from anyone, including children.</p>
 <h2>Security</h2><p>Logins are kept in the Keychain. Everything the app stores in your iCloud is end-to-end encrypted, and the QR transfer is encrypted with a one-time key. Keep your devices up to date, use two-factor authentication for your Apple Account, and prefer sources with https:// addresses.</p>
@@ -299,7 +299,7 @@ def channelry():
 <li>В iCloud: пока вы не удалите источник на iPhone, iPad или Mac — тогда он исчезнет со всех устройств. Удаление на Apple TV только скрывает источник там.</li>
 <li>У нас: ничего из приложения, потому что из приложения к нам ничего не приходит.</li></ul>
 <h2>Ваши права</h2>
-<p>По GDPR и UK GDPR вы вправе получить доступ к данным, исправить, удалить их, ограничить обработку или возразить против неё, получить данные в переносимом формате и отозвать согласие, а также пожаловаться в надзорный орган. Данные приложения лежат на ваших устройствах и в вашем iCloud, поэтому вы управляете ими сами: меняйте или удаляйте источники в приложении или удалите данные {A} из iCloud (см. <a href="/channelry/ru/support/">Поддержку</a>). Копию данных iCloud можно запросить у Apple на <a href="https://privacy.apple.com">privacy.apple.com</a>. По остальным вопросам пишите на {mail()}. Мы отвечаем в течение месяца.</p>
+<p>По GDPR и UK GDPR вы вправе получить доступ к данным, исправить, удалить их, ограничить обработку или возразить против неё, получить данные в переносимом формате и отозвать согласие, а также пожаловаться в надзорный орган. Данные приложения лежат на ваших устройствах и в вашем iCloud, поэтому вы управляете ими сами: меняйте или удаляйте источники в приложении или удалите данные {A} из iCloud (см. <a href="/couchdial/ru/support/">Поддержку</a>). Копию данных iCloud можно запросить у Apple на <a href="https://privacy.apple.com">privacy.apple.com</a>. По остальным вопросам пишите на {mail()}. Мы отвечаем в течение месяца.</p>
 <h2>Дети</h2><p>{A} не предназначен для детей. Мы сознательно не собираем персональные данные ни у кого, в том числе у детей.</p>
 <h2>Безопасность</h2><p>Логины хранятся в связке ключей. Всё, что приложение хранит в вашем iCloud, защищено сквозным шифрованием, передача по QR шифруется одноразовым ключом. Обновляйте устройства, включите двухфакторную аутентификацию Apple Account и по возможности используйте источники с адресами https://.</p>
 <h2>Изменения</h2><p>Когда мы меняем политику, мы обновляем эту страницу и дату выше. Если приложение начнёт обращаться с данными по-новому, мы опишем это здесь до выхода обновления и спросим согласие в приложении, где это нужно.</p>
@@ -322,7 +322,7 @@ def channelry():
 <p><b>How do I restore my purchase?</b><br>Sign in with the Apple Account you used to buy Pro and open <b>Settings → Purchases → Restore purchase</b>. Pro works on every device with that Apple Account and for family members through Family Sharing.</p>
 <p><b>How do I delete my data?</b><br>Delete a source on iPhone, iPad or Mac to remove it from all devices and iCloud. Delete the app to remove its local data and Keychain logins. To remove everything from iCloud, open <b>Settings → [your name] → iCloud → Manage Storage</b>, choose {A} and delete its data. We keep none of your data.</p>
 <h2>Privacy and terms</h2>
-<p><a href="/channelry/privacy/">Privacy Policy</a>. Short version: we collect no data. Terms of Use: <a href="{eula}">Apple's Standard License Agreement (EULA)</a>.</p>
+<p><a href="/couchdial/privacy/">Privacy Policy</a>. Short version: we collect no data. Terms of Use: <a href="{eula}">Apple's Standard License Agreement (EULA)</a>.</p>
 """
 
     support_ru = f"""<h1>Поддержка {A}</h1>
@@ -342,13 +342,13 @@ def channelry():
 <p><b>Как восстановить покупку?</b><br>Войдите в Apple Account, с которого покупали Pro, и откройте <b>Настройки → Покупки → Восстановить покупку</b>. Pro работает на всех устройствах с этим Apple Account и у членов семьи через «Семейный доступ».</p>
 <p><b>Как удалить мои данные?</b><br>Удалите источник на iPhone, iPad или Mac — он исчезнет со всех устройств и из iCloud. Удалите приложение — исчезнут локальные данные и логины в связке ключей. Чтобы стереть всё из iCloud, откройте <b>Настройки → ваше имя → iCloud → Управление хранилищем</b>, выберите {A} и удалите данные. У нас ваших данных нет.</p>
 <h2>Конфиденциальность и условия</h2>
-<p><a href="/channelry/ru/privacy/">Политика конфиденциальности</a>. Коротко: мы не собираем данные. Условия использования: <a href="{eula}">стандартное лицензионное соглашение Apple (EULA)</a>.</p>
+<p><a href="/couchdial/ru/privacy/">Политика конфиденциальности</a>. Коротко: мы не собираем данные. Условия использования: <a href="{eula}">стандартное лицензионное соглашение Apple (EULA)</a>.</p>
 """
 
-    page("channelry/privacy", "en", f"{A} Privacy Policy", privacy_en, "channelry", "privacy")
-    page("channelry/ru/privacy", "ru", f"Политика конфиденциальности {A}", privacy_ru, "channelry", "privacy")
-    page("channelry/support", "en", f"{A} Support", support_en, "channelry", "support")
-    page("channelry/ru/support", "ru", f"Поддержка {A}", support_ru, "channelry", "support")
+    page("couchdial/privacy", "en", f"{A} Privacy Policy", privacy_en, "couchdial", "privacy")
+    page("couchdial/ru/privacy", "ru", f"Политика конфиденциальности {A}", privacy_ru, "couchdial", "privacy")
+    page("couchdial/support", "en", f"{A} Support", support_en, "couchdial", "support")
+    page("couchdial/ru/support", "ru", f"Поддержка {A}", support_ru, "couchdial", "support")
 
 
 def home():
@@ -363,7 +363,7 @@ if __name__ == "__main__":
     if not SUPPORT_EMAIL:
         SUPPORT_EMAIL = "support-email-not-set@example.invalid"
     lockbar()
-    channelry()
+    couchdial()
     home()
     (ROOT / ".nojekyll").write_text("")
     print("built")

@@ -28,7 +28,9 @@ footer{margin-top:3em;color:var(--mut);font-size:.9rem}
 """
 
 APPS = [("lockbar", "Lockbar", {"en": "Find sensitive photos on your iPhone and lock them in an encrypted vault.",
-                                "ru": "Находит чувствительные фото на iPhone и прячет их в зашифрованный сейф."})]
+                                "ru": "Находит чувствительные фото на iPhone и прячет их в зашифрованный сейф."}),
+        ("channelry", "Channelry", {"en": "A player for your own IPTV playlists on iPhone, iPad and Apple TV.",
+                                    "ru": "Плеер для ваших IPTV-плейлистов на iPhone, iPad и Apple TV."})]
 
 T = {  # UI strings
     "en": {"privacy": "Privacy Policy", "support": "Support", "home": "Home", "lang": "Русский", "eff": "Effective"},
@@ -207,6 +209,148 @@ def lockbar():
     page("lockbar/ru/support", "ru", f"Поддержка {A}", support_ru, "lockbar", "support")
 
 
+def channelry():
+    A = "Channelry"
+    eff = {"en": "October 27, 2026", "ru": "27 октября 2026"}
+    eula = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+    cancel = "https://support.apple.com/118428"
+    privacy_en = f"""<h1>{A} Privacy Policy</h1><p class="mut">Effective {eff['en']}</p>
+<h2>The short version</h2><ul>
+<li>{A} has no accounts and no servers of its own. Your playlists, logins and viewing history never reach us.</li>
+<li>If you use iCloud, your sources move between your devices through your private iCloud. Everything the app stores there is end-to-end encrypted.</li>
+<li>No ads, no tracking, no analytics and no crash-reporting services.</li>
+<li>The app connects only to the servers in the sources you add, and to Apple.</li></ul>
+<h2>Who is responsible</h2>
+<p>{A} is made by {DEVELOPER}, an individual developer ("we"). For the purposes of the GDPR and the UK GDPR, we are the controller for the {A} apps. Contact: {mail()}.</p>
+<p>This policy covers {A} for iPhone, iPad, Apple TV and Mac, and this website. The website uses no cookies, scripts or third-party resources.</p>
+<h2>How {A} works</h2>
+<p>{A} is a player for your own M3U playlists and Xtream accounts. It contains no channels. What you add is stored on your devices and, if you're signed in to iCloud, in your private iCloud storage, which Apple runs for you. We don't run any server that your data passes through, and we can't see what you store in your iCloud.</p>
+<h2>What the app stores and where</h2>
+<p><b>Source details.</b> The name you give the source, its type (M3U link, M3U file or Xtream), the server address (host and port only), the Xtream user name, your settings for the source (for example "Show on Apple TV"), and the expiry date and connection limit if your provider reports them. Stored on your device and, if you use iCloud, in your private iCloud database, end-to-end encrypted. Apple sees only technical metadata, such as the record type and dates. Used to show your sources and move them between your devices.</p>
+<p><b>Links, logins and playlist files.</b> The full playlist link (it may contain a token), the Xtream server, user name and password, and the contents of an M3U file you import. Stored in the Keychain on each device. In your private iCloud only end-to-end encrypted: links and logins in encrypted fields, playlist files encrypted with their own key before upload. The keys are kept in your iCloud Keychain, so neither Apple nor we can read them.</p>
+<p><b>Your devices.</b> For each device where {A} runs: its name, its type and when the app was last open on it. When you send a source to a specific device, a record of which source went where, the name of the sending device and when it arrived. Stored in your private iCloud database, end-to-end encrypted, to show "Apple TV nearby", send a source to that device and confirm that it arrived.</p>
+<p><b>Favorites, recent channels, Order changes, player settings, parental PIN.</b> Only on this device.</p>
+<p><b>Channel lists and programme guide.</b> Downloaded from your sources and kept in a cache on your device.</p>
+<p><b>Purchases.</b> Apple handles payment. The app asks Apple's StoreKit on your device whether you have {A} Pro. We never see your name, Apple Account or payment details. Apple gives us sales reports that don't identify you.</p>
+<h2>Sending a source to Apple TV with a QR code</h2>
+<p>The Apple TV shows a QR code with a one-time code and an encryption key. Your iPhone scans it, encrypts the source with that key (AES-GCM, 256-bit) and leaves the encrypted package in the app's public iCloud database under the one-time code. The Apple TV downloads the package, decrypts it and confirms, and your iPhone then deletes the package. The key exists only in the QR code: without it nobody, including Apple and us, can read the package. Each code works once and only for 10 minutes. If the Apple TV never confirms, the encrypted package can stay in the public database, still unreadable without the key.</p>
+<h2>Who the app connects to</h2><ul>
+<li><b>The servers in your sources</b>: playlists, Xtream servers, streams, and logo and guide addresses listed in your playlist. Like any website, they see your IP address and what the app requests. Their own privacy policies apply, and we get nothing from them. Addresses that start with http:// are not encrypted.</li>
+<li><b>Apple</b>: iCloud (syncing and QR transfer) and the App Store (purchases).</li></ul>
+<p>Nothing else. We have no servers and keep no logs.</p>
+<h2>What we don't do</h2><ul>
+<li>No ads, no tracking, and no analytics or crash-reporting services in the app. The app never asks for permission to track you.</li>
+<li>We don't sell or share personal information, and we don't build profiles.</li>
+<li>Sorting your playlist ("Order") happens on your device.</li></ul>
+<p>If you turned on "Share with App Developers" in your device's privacy settings, Apple may share crash reports and aggregated usage statistics with us. That is Apple's feature, under Apple's privacy policy, and the reports don't identify you.</p>
+<h2>When you email us</h2>
+<p>We receive your email address and what you write, use it only to answer you, and keep it only as long as we need to help you, unless the law requires longer. Please don't send passwords or full playlist links.</p>
+<h2>Legal bases (GDPR and UK GDPR)</h2><ul>
+<li>Storing and syncing your sources, playing streams and checking your purchase are needed to provide the app you chose to use (Art. 6(1)(b)).</li>
+<li>Answering your emails: our legitimate interest in helping you (Art. 6(1)(f)), or performance of a contract when it's about your purchase.</li></ul>
+<h2>How long data is kept</h2><ul>
+<li>On your device: until you delete the source, clear recent channels or delete the app.</li>
+<li>In your iCloud: until you delete the source on an iPhone, iPad or Mac, which removes it from all your devices. Deleting a source on Apple TV only hides it there.</li>
+<li>With us: nothing from the app, because nothing from the app reaches us.</li></ul>
+<h2>Your rights</h2>
+<p>Under the GDPR and the UK GDPR you can access, correct, delete, restrict or object to processing of your data, receive it in a portable format and withdraw consent. You can also complain to a data protection authority. The app's data is on your devices and in your iCloud, so you control it directly: edit or delete sources in the app, or delete {A}'s iCloud data (see <a href="/channelry/support/">Support</a>). Apple lets you request a copy of your iCloud data at <a href="https://privacy.apple.com">privacy.apple.com</a>. For anything else, email {mail()}. We reply within one month.</p>
+<p>California and other US states: we don't sell or share personal information, don't use it for targeted advertising and don't use sensitive personal information.</p>
+<h2>Children</h2><p>{A} is not made for children. We don't knowingly collect personal data from anyone, including children.</p>
+<h2>Security</h2><p>Logins are kept in the Keychain. Everything the app stores in your iCloud is end-to-end encrypted, and the QR transfer is encrypted with a one-time key. Keep your devices up to date, use two-factor authentication for your Apple Account, and prefer sources with https:// addresses.</p>
+<h2>Changes</h2><p>When we change this policy, we update this page and the date above. If the app starts handling your data in a new way, we'll describe it here before that update is released and ask for your consent in the app where it's required.</p>
+"""
+
+    privacy_ru = f"""<h1>Политика конфиденциальности {A}</h1><p class="mut">Действует с {eff['ru']}</p>
+<h2>Коротко</h2><ul>
+<li>В {A} нет аккаунтов и нет наших серверов. Ваши плейлисты, логины и история просмотров к нам не попадают.</li>
+<li>Если вы пользуетесь iCloud, источники переходят между вашими устройствами через ваш личный iCloud. Всё, что приложение там хранит, защищено сквозным шифрованием.</li>
+<li>Нет рекламы, слежки, аналитики и сервисов отчётов о сбоях.</li>
+<li>Приложение подключается только к серверам из ваших источников и к Apple.</li></ul>
+<h2>Кто отвечает за данные</h2>
+<p>{A} разрабатывает {DEVELOPER}, индивидуальный разработчик («мы»). По GDPR и UK GDPR мы — контролёр данных для приложений {A}. Связь: {mail()}.</p>
+<p>Политика относится к {A} для iPhone, iPad, Apple TV и Mac и к этому сайту. Сайт не использует cookie, скрипты и сторонние ресурсы.</p>
+<h2>Как устроен {A}</h2>
+<p>{A} — плеер для ваших собственных плейлистов M3U и аккаунтов Xtream. Каналов в нём нет. То, что вы добавляете, хранится на ваших устройствах и, если вы вошли в iCloud, в вашем личном хранилище iCloud, которое для вас ведёт Apple. Через наши серверы ваши данные не проходят, и мы не видим, что лежит в вашем iCloud.</p>
+<h2>Что хранит приложение и где</h2>
+<p><b>Сведения об источнике.</b> Название, тип (ссылка M3U, файл M3U или Xtream), адрес сервера (только хост и порт), логин Xtream, ваши настройки источника (например, «Показывать на Apple TV»), срок действия и лимит подключений, если их сообщает провайдер. Хранятся на устройстве и, если вы пользуетесь iCloud, в вашей личной базе iCloud со сквозным шифрованием. Apple видит только служебные метаданные: тип записи и даты. Нужны, чтобы показывать источники и переносить их между устройствами.</p>
+<p><b>Ссылки, логины и файлы плейлистов.</b> Полная ссылка на плейлист (в ней может быть токен), сервер, логин и пароль Xtream, содержимое импортированного файла M3U. Хранятся в связке ключей на каждом устройстве. В вашем личном iCloud — только со сквозным шифрованием: ссылки и логины в зашифрованных полях, файлы плейлистов шифруются собственным ключом до загрузки. Ключи лежат в вашей связке ключей iCloud, поэтому ни Apple, ни мы прочитать их не можем.</p>
+<p><b>Ваши устройства.</b> Для каждого устройства с {A}: название, тип и когда приложение было на нём открыто последний раз. Когда вы отправляете источник на конкретное устройство — какой источник куда ушёл, название отправившего устройства и время получения. Хранится в вашей личной базе iCloud со сквозным шифрованием, чтобы показать «Apple TV рядом», отправить на него источник и подтвердить получение.</p>
+<p><b>Избранное, недавние каналы, изменения «Порядка», настройки плеера, родительский PIN.</b> Только на этом устройстве.</p>
+<p><b>Списки каналов и телепрограмма.</b> Загружаются из ваших источников и хранятся в кэше на устройстве.</p>
+<p><b>Покупки.</b> Оплату проводит Apple. Приложение через StoreKit на устройстве проверяет, есть ли у вас {A} Pro. Ваше имя, Apple Account и платёжные данные мы не видим. Apple присылает нам отчёты о продажах, по которым вас нельзя опознать.</p>
+<h2>Передача источника на Apple TV по QR-коду</h2>
+<p>Apple TV показывает QR-код с одноразовым кодом и ключом шифрования. iPhone сканирует его, шифрует источник этим ключом (AES-GCM, 256 бит) и кладёт зашифрованный пакет в публичную базу iCloud приложения под одноразовым кодом. Apple TV скачивает пакет, расшифровывает и подтверждает получение, после чего iPhone удаляет пакет. Ключ есть только в QR-коде: без него пакет не прочитает никто, включая Apple и нас. Каждый код срабатывает один раз и только 10 минут. Если Apple TV не подтвердит получение, зашифрованный пакет может остаться в публичной базе, но без ключа он нечитаем.</p>
+<h2>К кому подключается приложение</h2><ul>
+<li><b>К серверам ваших источников</b>: плейлисты, серверы Xtream, потоки, адреса логотипов и телепрограммы из вашего плейлиста. Как любой сайт, они видят ваш IP-адрес и что запрашивает приложение. У них свои правила конфиденциальности, мы от них ничего не получаем. Адреса на http:// не шифруются.</li>
+<li><b>К Apple</b>: iCloud (синхронизация и передача по QR) и App Store (покупки).</li></ul>
+<p>Больше ни к кому. Своих серверов у нас нет, логов мы не ведём.</p>
+<h2>Чего мы не делаем</h2><ul>
+<li>Нет рекламы, слежки, сервисов аналитики и отчётов о сбоях. Приложение никогда не просит разрешения на отслеживание.</li>
+<li>Мы не продаём и не передаём персональные данные и не составляем профили.</li>
+<li>Упорядочивание плейлиста («Порядок») происходит на вашем устройстве.</li></ul>
+<p>Если в настройках устройства включено «Делиться с разработчиками», Apple может передавать нам отчёты о сбоях и обобщённую статистику. Это функция Apple по правилам Apple, и по этим отчётам вас нельзя опознать.</p>
+<h2>Когда вы пишете нам</h2>
+<p>Мы получаем ваш email и текст письма, используем их только для ответа и храним, пока это нужно, чтобы помочь, если закон не требует дольше. Не присылайте пароли и полные ссылки на плейлисты.</p>
+<h2>Правовые основания (GDPR и UK GDPR)</h2><ul>
+<li>Хранение и синхронизация источников, воспроизведение потоков и проверка покупки нужны, чтобы предоставить приложение, которым вы решили пользоваться (ст. 6(1)(b)).</li>
+<li>Ответы на письма: наш законный интерес помочь вам (ст. 6(1)(f)) или исполнение договора, если вопрос о покупке.</li></ul>
+<h2>Сколько хранятся данные</h2><ul>
+<li>На устройстве: пока вы не удалите источник, не очистите недавние каналы или не удалите приложение.</li>
+<li>В iCloud: пока вы не удалите источник на iPhone, iPad или Mac — тогда он исчезнет со всех устройств. Удаление на Apple TV только скрывает источник там.</li>
+<li>У нас: ничего из приложения, потому что из приложения к нам ничего не приходит.</li></ul>
+<h2>Ваши права</h2>
+<p>По GDPR и UK GDPR вы вправе получить доступ к данным, исправить, удалить их, ограничить обработку или возразить против неё, получить данные в переносимом формате и отозвать согласие, а также пожаловаться в надзорный орган. Данные приложения лежат на ваших устройствах и в вашем iCloud, поэтому вы управляете ими сами: меняйте или удаляйте источники в приложении или удалите данные {A} из iCloud (см. <a href="/channelry/ru/support/">Поддержку</a>). Копию данных iCloud можно запросить у Apple на <a href="https://privacy.apple.com">privacy.apple.com</a>. По остальным вопросам пишите на {mail()}. Мы отвечаем в течение месяца.</p>
+<h2>Дети</h2><p>{A} не предназначен для детей. Мы сознательно не собираем персональные данные ни у кого, в том числе у детей.</p>
+<h2>Безопасность</h2><p>Логины хранятся в связке ключей. Всё, что приложение хранит в вашем iCloud, защищено сквозным шифрованием, передача по QR шифруется одноразовым ключом. Обновляйте устройства, включите двухфакторную аутентификацию Apple Account и по возможности используйте источники с адресами https://.</p>
+<h2>Изменения</h2><p>Когда мы меняем политику, мы обновляем эту страницу и дату выше. Если приложение начнёт обращаться с данными по-новому, мы опишем это здесь до выхода обновления и спросим согласие в приложении, где это нужно.</p>
+"""
+
+    support_en = f"""<h1>{A} Support</h1>
+<p>{A} is a player for your own IPTV playlists on iPhone, iPad, Apple TV and Mac. It doesn't include, sell or recommend channels, playlists or providers.</p>
+<p><b>Contact:</b> {mail()}. Please tell us your device and system version, the app version (Settings → About) and what you did and saw; a screenshot helps. Never send passwords or full playlist links.</p>
+<h2>Frequently asked questions</h2>
+<p><b>How do I add a playlist?</b><br>On iPhone, iPad or Mac tap <b>Add source</b> and choose <b>Link</b> (an M3U playlist link), <b>Xtream</b> (server, login and password) or <b>File</b> (an M3U file). The app checks the source, imports it and sorts the channels into categories. On Apple TV choose <b>Add from iPhone</b>, <b>Scan a code</b> or <b>Type on this Apple TV</b>.</p>
+<p><b>Why won't a channel play?</b><br>{A} plays what your source sends and shows the reason when a channel fails. On the error screen tap <b>What to tell the provider</b> to copy a ready-made message.</p><ul>
+<li>Access denied (401, 403): the login is wrong, the subscription doesn't include this channel, or the provider blocks your network or region.</li>
+<li>Not found (404): the channel moved or was removed. Refresh the source; if it's still broken, the provider needs to fix the link.</li>
+<li>Server error or no response: the provider's server is down or overloaded. Try later or another mirror of the channel.</li>
+<li>Subscription expired, or connection limit reached: reported by your provider.</li>
+<li>A web page instead of a stream: ask the provider for a direct stream or M3U link.</li>
+<li>Unsupported format: turn on <b>Compatible player for other formats</b> in Settings → Player.</li></ul>
+<p><b>How do I move my sources to Apple TV?</b><br>With the same Apple Account, sign in to iCloud on both devices and sources with <b>Show on Apple TV</b> appear by themselves. With any Apple Account, choose <b>Scan a code</b> on Apple TV and scan it with your iPhone camera. When {A} is open on your Apple TV, your iPhone also offers <b>Send to Apple TV</b>.</p>
+<p><b>How do I cancel my subscription?</b><br>Subscriptions are managed by Apple: on iPhone or iPad open <b>Settings → [your name] → Subscriptions</b>; on Apple TV <b>Settings → Users and Accounts → your account → Subscriptions</b>. Cancel at least 24 hours before the period or free trial ends. Deleting the app doesn't cancel a subscription. See <a href="{cancel}">Apple's guide</a>. Refunds: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+<p><b>How do I restore my purchase?</b><br>Sign in with the Apple Account you used to buy Pro and open <b>Settings → Purchases → Restore purchase</b>. Pro works on every device with that Apple Account and for family members through Family Sharing.</p>
+<p><b>How do I delete my data?</b><br>Delete a source on iPhone, iPad or Mac to remove it from all devices and iCloud. Delete the app to remove its local data and Keychain logins. To remove everything from iCloud, open <b>Settings → [your name] → iCloud → Manage Storage</b>, choose {A} and delete its data. We keep none of your data.</p>
+<h2>Privacy and terms</h2>
+<p><a href="/channelry/privacy/">Privacy Policy</a>. Short version: we collect no data. Terms of Use: <a href="{eula}">Apple's Standard License Agreement (EULA)</a>.</p>
+"""
+
+    support_ru = f"""<h1>Поддержка {A}</h1>
+<p>{A} — плеер для ваших собственных IPTV-плейлистов на iPhone, iPad, Apple TV и Mac. Мы не включаем в него, не продаём и не советуем каналы, плейлисты или провайдеров.</p>
+<p><b>Связь:</b> {mail()}. Напишите устройство и версию системы, версию приложения (Настройки → О приложении), что вы делали и что увидели; скриншот помогает. Никогда не присылайте пароли и полные ссылки на плейлисты.</p>
+<h2>Частые вопросы</h2>
+<p><b>Как добавить плейлист?</b><br>На iPhone, iPad или Mac нажмите <b>«Добавить источник»</b> и выберите <b>«Ссылка»</b> (ссылка на плейлист M3U), <b>Xtream</b> (сервер, логин и пароль) или <b>«Файл»</b> (файл M3U). Приложение проверит источник, импортирует его и разложит каналы по категориям. На Apple TV выберите <b>«Добавить с iPhone»</b>, <b>«Сканировать код»</b> или <b>«Ввести на этом Apple TV»</b>.</p>
+<p><b>Почему не играет канал?</b><br>{A} воспроизводит то, что отдаёт источник, и показывает причину ошибки. На экране ошибки нажмите <b>«Что сказать провайдеру»</b>, чтобы скопировать готовое сообщение.</p><ul>
+<li>Доступ запрещён (401, 403): неверный логин, канал не входит в подписку или провайдер блокирует вашу сеть или регион.</li>
+<li>Не найдено (404): канал переехал или удалён. Обновите источник; если не помогло, ссылку должен исправить провайдер.</li>
+<li>Ошибка сервера или нет ответа: сервер провайдера не работает или перегружен. Попробуйте позже или другое зеркало канала.</li>
+<li>Подписка истекла или достигнут лимит подключений: это сообщает провайдер.</li>
+<li>Веб-страница вместо потока: попросите у провайдера прямую ссылку на поток или M3U.</li>
+<li>Формат не поддерживается: включите <b>«Совместимый плеер для других форматов»</b> в Настройки → Плеер.</li></ul>
+<p><b>Как перенести источники на Apple TV?</b><br>С одним Apple Account войдите в iCloud на обоих устройствах — источники с включённым <b>«Показывать на Apple TV»</b> появятся сами. С любым Apple Account выберите на Apple TV <b>«Сканировать код»</b> и отсканируйте его камерой iPhone. Когда {A} открыт на Apple TV, iPhone также предлагает <b>«Отправить на Apple TV»</b>.</p>
+<p><b>Как отменить подписку?</b><br>Подписками управляет Apple: на iPhone или iPad — <b>Настройки → ваше имя → Подписки</b>; на Apple TV — <b>Настройки → Пользователи и учётные записи → ваша учётная запись → Подписки</b>. Отмените не позже чем за 24 часа до конца периода или пробного периода. Удаление приложения подписку не отменяет. Подробнее — в <a href="{cancel}">инструкции Apple</a>. Возврат денег: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+<p><b>Как восстановить покупку?</b><br>Войдите в Apple Account, с которого покупали Pro, и откройте <b>Настройки → Покупки → Восстановить покупку</b>. Pro работает на всех устройствах с этим Apple Account и у членов семьи через «Семейный доступ».</p>
+<p><b>Как удалить мои данные?</b><br>Удалите источник на iPhone, iPad или Mac — он исчезнет со всех устройств и из iCloud. Удалите приложение — исчезнут локальные данные и логины в связке ключей. Чтобы стереть всё из iCloud, откройте <b>Настройки → ваше имя → iCloud → Управление хранилищем</b>, выберите {A} и удалите данные. У нас ваших данных нет.</p>
+<h2>Конфиденциальность и условия</h2>
+<p><a href="/channelry/ru/privacy/">Политика конфиденциальности</a>. Коротко: мы не собираем данные. Условия использования: <a href="{eula}">стандартное лицензионное соглашение Apple (EULA)</a>.</p>
+"""
+
+    page("channelry/privacy", "en", f"{A} Privacy Policy", privacy_en, "channelry", "privacy")
+    page("channelry/ru/privacy", "ru", f"Политика конфиденциальности {A}", privacy_ru, "channelry", "privacy")
+    page("channelry/support", "en", f"{A} Support", support_en, "channelry", "support")
+    page("channelry/ru/support", "ru", f"Поддержка {A}", support_ru, "channelry", "support")
+
+
 def home():
     items = "".join(f'<li><a href="/{slug}/support/">{e(name)}</a> <span class="mut">— {e(desc["en"])}</span></li>'
                     for slug, name, desc in APPS)
@@ -219,6 +363,7 @@ if __name__ == "__main__":
     if not SUPPORT_EMAIL:
         SUPPORT_EMAIL = "support-email-not-set@example.invalid"
     lockbar()
+    channelry()
     home()
     (ROOT / ".nojekyll").write_text("")
     print("built")

@@ -11,12 +11,12 @@ nav{display:flex;gap:16px;flex-wrap:wrap;font-size:.95rem;margin-bottom:8px}nav 
 code{background:var(--line);padding:1px 5px;border-radius:5px;font-size:.92em}
 footer{margin-top:3em;color:var(--mut);font-size:.9rem}
 </style></head><body><main><nav><a href="/couchdial/privacy/" class=on>Privacy Policy</a><a href="/couchdial/support/">Support</a><a href="/couchdial/ru/privacy/">Русский</a></nav>
-<h1>Couchdial Privacy Policy</h1><p class="mut">Effective October 27, 2026</p>
+<h1>Couchdial Privacy Policy</h1><p class="mut">Effective November 4, 2026</p>
 <h2>The short version</h2><ul>
 <li>Couchdial has no accounts and no servers of its own. Your playlists, logins and viewing history never reach us.</li>
 <li>If you use iCloud, your sources move between your devices through your private iCloud. Everything the app stores there is end-to-end encrypted.</li>
-<li>No ads, no tracking, no analytics and no crash-reporting services.</li>
-<li>The app connects only to the servers in the sources you add, and to Apple.</li></ul>
+<li>No ads, no tracking and no analytics. When the app crashes, freezes or is slow, it sends an anonymous technical report to our crash-reporting service, Sentry (stored in the EU).</li>
+<li>The app connects only to the servers in the sources you add, to Apple and to Sentry.</li></ul>
 <h2>Who is responsible</h2>
 <p>Couchdial is made by Mikhail Mukminov, an individual developer ("we"). For the purposes of the GDPR and the UK GDPR, we are the controller for the Couchdial apps. Contact: <a href="mailto:voltec.apps@gmail.com">voltec.apps@gmail.com</a>.</p>
 <p>This policy covers Couchdial for iPhone, iPad, Apple TV and Mac, and this website. The website uses no cookies, scripts or third-party resources.</p>
@@ -33,10 +33,13 @@ footer{margin-top:3em;color:var(--mut);font-size:.9rem}
 <p>The Apple TV shows a QR code with a one-time code and an encryption key. Your iPhone scans it, encrypts the source with that key (AES-GCM, 256-bit) and leaves the encrypted package in the app's public iCloud database under the one-time code. The Apple TV downloads the package, decrypts it and confirms, and your iPhone then deletes the package. The key exists only in the QR code: without it nobody, including Apple and us, can read the package. Each code works once and only for 10 minutes. If the Apple TV never confirms, the encrypted package can stay in the public database, still unreadable without the key.</p>
 <h2>Who the app connects to</h2><ul>
 <li><b>The servers in your sources</b>: playlists, Xtream servers, streams, and logo and guide addresses listed in your playlist. Like any website, they see your IP address and what the app requests. Their own privacy policies apply, and we get nothing from them. Addresses that start with http:// are not encrypted.</li>
-<li><b>Apple</b>: iCloud (syncing and QR transfer) and the App Store (purchases).</li></ul>
-<p>Nothing else. We have no servers and keep no logs.</p>
+<li><b>Apple</b>: iCloud (syncing and QR transfer) and the App Store (purchases).</li>
+<li><b>Sentry</b> (Functional Software, Inc.; data stored in Germany): anonymous crash and performance reports, see below.</li></ul>
+<p>Nothing else. We have no servers of our own.</p>
+<h2>Crash and performance reports</h2>
+<p>When the app crashes, freezes or is terminated by the system, it sends a report to Sentry: the app version, device model, system version, language and time zone, the technical trace of the error and the app's recent screens. For about one in five launches it also sends how long start-up and screens took. Reports contain no user ID and no Apple Account details, and never include playlist or stream addresses, logins, passwords or your PIN. We use them only to find and fix bugs. Sentry processes them for us under a data processing agreement, stores them in the EU and deletes them after at most 90 days.</p>
 <h2>What we don't do</h2><ul>
-<li>No ads, no tracking, and no analytics or crash-reporting services in the app. The app never asks for permission to track you.</li>
+<li>No ads, no tracking and no analytics in the app. The app never asks for permission to track you.</li>
 <li>We don't sell or share personal information, and we don't build profiles.</li>
 <li>Sorting your playlist ("Order") happens on your device.</li></ul>
 <p>If you turned on "Share with App Developers" in your device's privacy settings, Apple may share crash reports and aggregated usage statistics with us. That is Apple's feature, under Apple's privacy policy, and the reports don't identify you.</p>
@@ -44,11 +47,12 @@ footer{margin-top:3em;color:var(--mut);font-size:.9rem}
 <p>We receive your email address and what you write, use it only to answer you, and keep it only as long as we need to help you, unless the law requires longer. Please don't send passwords or full playlist links.</p>
 <h2>Legal bases (GDPR and UK GDPR)</h2><ul>
 <li>Storing and syncing your sources, playing streams and checking your purchase are needed to provide the app you chose to use (Art. 6(1)(b)).</li>
+<li>Crash and performance reports: our legitimate interest in keeping the app working (Art. 6(1)(f)).</li>
 <li>Answering your emails: our legitimate interest in helping you (Art. 6(1)(f)), or performance of a contract when it's about your purchase.</li></ul>
 <h2>How long data is kept</h2><ul>
 <li>On your device: until you delete the source, clear recent channels or delete the app.</li>
 <li>In your iCloud: until you delete the source on an iPhone, iPad or Mac, which removes it from all your devices. Deleting a source on Apple TV only hides it there.</li>
-<li>With us: nothing from the app, because nothing from the app reaches us.</li></ul>
+<li>With us: crash and performance reports, in Sentry, for at most 90 days. Nothing else from the app reaches us.</li></ul>
 <h2>Your rights</h2>
 <p>Under the GDPR and the UK GDPR you can access, correct, delete, restrict or object to processing of your data, receive it in a portable format and withdraw consent. You can also complain to a data protection authority. The app's data is on your devices and in your iCloud, so you control it directly: edit or delete sources in the app, or delete Couchdial's iCloud data (see <a href="/couchdial/support/">Support</a>). Apple lets you request a copy of your iCloud data at <a href="https://privacy.apple.com">privacy.apple.com</a>. For anything else, email <a href="mailto:voltec.apps@gmail.com">voltec.apps@gmail.com</a>. We reply within one month.</p>
 <p>California and other US states: we don't sell or share personal information, don't use it for targeted advertising and don't use sensitive personal information.</p>

@@ -211,15 +211,15 @@ def lockbar():
 
 def couchdial():
     A = "Couchdial"
-    eff = {"en": "October 27, 2026", "ru": "27 октября 2026"}
+    eff = {"en": "November 4, 2026", "ru": "4 ноября 2026"}
     eula = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
     cancel = "https://support.apple.com/118428"
     privacy_en = f"""<h1>{A} Privacy Policy</h1><p class="mut">Effective {eff['en']}</p>
 <h2>The short version</h2><ul>
 <li>{A} has no accounts and no servers of its own. Your playlists, logins and viewing history never reach us.</li>
 <li>If you use iCloud, your sources move between your devices through your private iCloud. Everything the app stores there is end-to-end encrypted.</li>
-<li>No ads, no tracking, no analytics and no crash-reporting services.</li>
-<li>The app connects only to the servers in the sources you add, and to Apple.</li></ul>
+<li>No ads, no tracking and no analytics. When the app crashes, freezes or is slow, it sends an anonymous technical report to our crash-reporting service, Sentry (stored in the EU).</li>
+<li>The app connects only to the servers in the sources you add, to Apple and to Sentry.</li></ul>
 <h2>Who is responsible</h2>
 <p>{A} is made by {DEVELOPER}, an individual developer ("we"). For the purposes of the GDPR and the UK GDPR, we are the controller for the {A} apps. Contact: {mail()}.</p>
 <p>This policy covers {A} for iPhone, iPad, Apple TV and Mac, and this website. The website uses no cookies, scripts or third-party resources.</p>
@@ -236,10 +236,13 @@ def couchdial():
 <p>The Apple TV shows a QR code with a one-time code and an encryption key. Your iPhone scans it, encrypts the source with that key (AES-GCM, 256-bit) and leaves the encrypted package in the app's public iCloud database under the one-time code. The Apple TV downloads the package, decrypts it and confirms, and your iPhone then deletes the package. The key exists only in the QR code: without it nobody, including Apple and us, can read the package. Each code works once and only for 10 minutes. If the Apple TV never confirms, the encrypted package can stay in the public database, still unreadable without the key.</p>
 <h2>Who the app connects to</h2><ul>
 <li><b>The servers in your sources</b>: playlists, Xtream servers, streams, and logo and guide addresses listed in your playlist. Like any website, they see your IP address and what the app requests. Their own privacy policies apply, and we get nothing from them. Addresses that start with http:// are not encrypted.</li>
-<li><b>Apple</b>: iCloud (syncing and QR transfer) and the App Store (purchases).</li></ul>
-<p>Nothing else. We have no servers and keep no logs.</p>
+<li><b>Apple</b>: iCloud (syncing and QR transfer) and the App Store (purchases).</li>
+<li><b>Sentry</b> (Functional Software, Inc.; data stored in Germany): anonymous crash and performance reports, see below.</li></ul>
+<p>Nothing else. We have no servers of our own.</p>
+<h2>Crash and performance reports</h2>
+<p>When the app crashes, freezes or is terminated by the system, it sends a report to Sentry: the app version, device model, system version, language and time zone, the technical trace of the error and the app's recent screens. For about one in five launches it also sends how long start-up and screens took. Reports contain no user ID and no Apple Account details, and never include playlist or stream addresses, logins, passwords or your PIN. We use them only to find and fix bugs. Sentry processes them for us under a data processing agreement, stores them in the EU and deletes them after at most 90 days.</p>
 <h2>What we don't do</h2><ul>
-<li>No ads, no tracking, and no analytics or crash-reporting services in the app. The app never asks for permission to track you.</li>
+<li>No ads, no tracking and no analytics in the app. The app never asks for permission to track you.</li>
 <li>We don't sell or share personal information, and we don't build profiles.</li>
 <li>Sorting your playlist ("Order") happens on your device.</li></ul>
 <p>If you turned on "Share with App Developers" in your device's privacy settings, Apple may share crash reports and aggregated usage statistics with us. That is Apple's feature, under Apple's privacy policy, and the reports don't identify you.</p>
@@ -247,11 +250,12 @@ def couchdial():
 <p>We receive your email address and what you write, use it only to answer you, and keep it only as long as we need to help you, unless the law requires longer. Please don't send passwords or full playlist links.</p>
 <h2>Legal bases (GDPR and UK GDPR)</h2><ul>
 <li>Storing and syncing your sources, playing streams and checking your purchase are needed to provide the app you chose to use (Art. 6(1)(b)).</li>
+<li>Crash and performance reports: our legitimate interest in keeping the app working (Art. 6(1)(f)).</li>
 <li>Answering your emails: our legitimate interest in helping you (Art. 6(1)(f)), or performance of a contract when it's about your purchase.</li></ul>
 <h2>How long data is kept</h2><ul>
 <li>On your device: until you delete the source, clear recent channels or delete the app.</li>
 <li>In your iCloud: until you delete the source on an iPhone, iPad or Mac, which removes it from all your devices. Deleting a source on Apple TV only hides it there.</li>
-<li>With us: nothing from the app, because nothing from the app reaches us.</li></ul>
+<li>With us: crash and performance reports, in Sentry, for at most 90 days. Nothing else from the app reaches us.</li></ul>
 <h2>Your rights</h2>
 <p>Under the GDPR and the UK GDPR you can access, correct, delete, restrict or object to processing of your data, receive it in a portable format and withdraw consent. You can also complain to a data protection authority. The app's data is on your devices and in your iCloud, so you control it directly: edit or delete sources in the app, or delete {A}'s iCloud data (see <a href="/couchdial/support/">Support</a>). Apple lets you request a copy of your iCloud data at <a href="https://privacy.apple.com">privacy.apple.com</a>. For anything else, email {mail()}. We reply within one month.</p>
 <p>California and other US states: we don't sell or share personal information, don't use it for targeted advertising and don't use sensitive personal information.</p>
@@ -264,8 +268,8 @@ def couchdial():
 <h2>Коротко</h2><ul>
 <li>В {A} нет аккаунтов и нет наших серверов. Ваши плейлисты, логины и история просмотров к нам не попадают.</li>
 <li>Если вы пользуетесь iCloud, источники переходят между вашими устройствами через ваш личный iCloud. Всё, что приложение там хранит, защищено сквозным шифрованием.</li>
-<li>Нет рекламы, слежки, аналитики и сервисов отчётов о сбоях.</li>
-<li>Приложение подключается только к серверам из ваших источников и к Apple.</li></ul>
+<li>Нет рекламы, слежки и аналитики. Если приложение падает, зависает или тормозит, оно отправляет анонимный технический отчёт в наш сервис отчётов о сбоях Sentry (данные хранятся в ЕС).</li>
+<li>Приложение подключается только к серверам из ваших источников, к Apple и к Sentry.</li></ul>
 <h2>Кто отвечает за данные</h2>
 <p>{A} разрабатывает {DEVELOPER}, индивидуальный разработчик («мы»). По GDPR и UK GDPR мы — контролёр данных для приложений {A}. Связь: {mail()}.</p>
 <p>Политика относится к {A} для iPhone, iPad, Apple TV и Mac и к этому сайту. Сайт не использует cookie, скрипты и сторонние ресурсы.</p>
@@ -282,10 +286,13 @@ def couchdial():
 <p>Apple TV показывает QR-код с одноразовым кодом и ключом шифрования. iPhone сканирует его, шифрует источник этим ключом (AES-GCM, 256 бит) и кладёт зашифрованный пакет в публичную базу iCloud приложения под одноразовым кодом. Apple TV скачивает пакет, расшифровывает и подтверждает получение, после чего iPhone удаляет пакет. Ключ есть только в QR-коде: без него пакет не прочитает никто, включая Apple и нас. Каждый код срабатывает один раз и только 10 минут. Если Apple TV не подтвердит получение, зашифрованный пакет может остаться в публичной базе, но без ключа он нечитаем.</p>
 <h2>К кому подключается приложение</h2><ul>
 <li><b>К серверам ваших источников</b>: плейлисты, серверы Xtream, потоки, адреса логотипов и телепрограммы из вашего плейлиста. Как любой сайт, они видят ваш IP-адрес и что запрашивает приложение. У них свои правила конфиденциальности, мы от них ничего не получаем. Адреса на http:// не шифруются.</li>
-<li><b>К Apple</b>: iCloud (синхронизация и передача по QR) и App Store (покупки).</li></ul>
-<p>Больше ни к кому. Своих серверов у нас нет, логов мы не ведём.</p>
+<li><b>К Apple</b>: iCloud (синхронизация и передача по QR) и App Store (покупки).</li>
+<li><b>К Sentry</b> (Functional Software, Inc.; данные хранятся в Германии): анонимные отчёты о сбоях и производительности, см. ниже.</li></ul>
+<p>Больше ни к кому. Своих серверов у нас нет.</p>
+<h2>Отчёты о сбоях и производительности</h2>
+<p>Когда приложение падает, зависает или его завершает система, оно отправляет отчёт в Sentry: версию приложения, модель устройства, версию системы, язык и часовой пояс, технический след ошибки и последние экраны приложения. Примерно при каждом пятом запуске оно также отправляет, сколько длились запуск и открытие экранов. В отчётах нет идентификатора пользователя и данных Apple Account, и никогда нет адресов плейлистов и потоков, логинов, паролей и вашего PIN. Мы используем отчёты только чтобы находить и исправлять ошибки. Sentry обрабатывает их для нас по договору об обработке данных, хранит в ЕС и удаляет не позже чем через 90 дней.</p>
 <h2>Чего мы не делаем</h2><ul>
-<li>Нет рекламы, слежки, сервисов аналитики и отчётов о сбоях. Приложение никогда не просит разрешения на отслеживание.</li>
+<li>Нет рекламы, слежки и сервисов аналитики. Приложение никогда не просит разрешения на отслеживание.</li>
 <li>Мы не продаём и не передаём персональные данные и не составляем профили.</li>
 <li>Упорядочивание плейлиста («Порядок») происходит на вашем устройстве.</li></ul>
 <p>Если в настройках устройства включено «Делиться с разработчиками», Apple может передавать нам отчёты о сбоях и обобщённую статистику. Это функция Apple по правилам Apple, и по этим отчётам вас нельзя опознать.</p>
@@ -293,11 +300,12 @@ def couchdial():
 <p>Мы получаем ваш email и текст письма, используем их только для ответа и храним, пока это нужно, чтобы помочь, если закон не требует дольше. Не присылайте пароли и полные ссылки на плейлисты.</p>
 <h2>Правовые основания (GDPR и UK GDPR)</h2><ul>
 <li>Хранение и синхронизация источников, воспроизведение потоков и проверка покупки нужны, чтобы предоставить приложение, которым вы решили пользоваться (ст. 6(1)(b)).</li>
+<li>Отчёты о сбоях и производительности: наш законный интерес поддерживать работу приложения (ст. 6(1)(f)).</li>
 <li>Ответы на письма: наш законный интерес помочь вам (ст. 6(1)(f)) или исполнение договора, если вопрос о покупке.</li></ul>
 <h2>Сколько хранятся данные</h2><ul>
 <li>На устройстве: пока вы не удалите источник, не очистите недавние каналы или не удалите приложение.</li>
 <li>В iCloud: пока вы не удалите источник на iPhone, iPad или Mac — тогда он исчезнет со всех устройств. Удаление на Apple TV только скрывает источник там.</li>
-<li>У нас: ничего из приложения, потому что из приложения к нам ничего не приходит.</li></ul>
+<li>У нас: отчёты о сбоях и производительности, в Sentry, не дольше 90 дней. Больше из приложения к нам ничего не приходит.</li></ul>
 <h2>Ваши права</h2>
 <p>По GDPR и UK GDPR вы вправе получить доступ к данным, исправить, удалить их, ограничить обработку или возразить против неё, получить данные в переносимом формате и отозвать согласие, а также пожаловаться в надзорный орган. Данные приложения лежат на ваших устройствах и в вашем iCloud, поэтому вы управляете ими сами: меняйте или удаляйте источники в приложении или удалите данные {A} из iCloud (см. <a href="/couchdial/ru/support/">Поддержку</a>). Копию данных iCloud можно запросить у Apple на <a href="https://privacy.apple.com">privacy.apple.com</a>. По остальным вопросам пишите на {mail()}. Мы отвечаем в течение месяца.</p>
 <h2>Дети</h2><p>{A} не предназначен для детей. Мы сознательно не собираем персональные данные ни у кого, в том числе у детей.</p>
@@ -320,9 +328,9 @@ def couchdial():
 <p><b>How do I move my sources to Apple TV?</b><br>With the same Apple Account, sign in to iCloud on both devices and sources with <b>Show on Apple TV</b> appear by themselves. With any Apple Account, choose <b>Scan a code</b> on Apple TV and scan it with your iPhone camera. When {A} is open on your Apple TV, your iPhone also offers <b>Send to Apple TV</b>.</p>
 <p><b>How do I cancel my subscription?</b><br>Subscriptions are managed by Apple: on iPhone or iPad open <b>Settings → [your name] → Subscriptions</b>; on Apple TV <b>Settings → Users and Accounts → your account → Subscriptions</b>. Cancel at least 24 hours before the period or free trial ends. Deleting the app doesn't cancel a subscription. See <a href="{cancel}">Apple's guide</a>. Refunds: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
 <p><b>How do I restore my purchase?</b><br>Sign in with the Apple Account you used to buy Pro and open <b>Settings → Purchases → Restore purchase</b>. Pro works on every device with that Apple Account and for family members through Family Sharing.</p>
-<p><b>How do I delete my data?</b><br>Delete a source on iPhone, iPad or Mac to remove it from all devices and iCloud. Delete the app to remove its local data and Keychain logins. To remove everything from iCloud, open <b>Settings → [your name] → iCloud → Manage Storage</b>, choose {A} and delete its data. We keep none of your data.</p>
+<p><b>How do I delete my data?</b><br>Delete a source on iPhone, iPad or Mac to remove it from all devices and iCloud. Delete the app to remove its local data and Keychain logins. To remove everything from iCloud, open <b>Settings → [your name] → iCloud → Manage Storage</b>, choose {A} and delete its data. Apart from anonymous crash reports, kept in Sentry for at most 90 days, we keep none of your data.</p>
 <h2>Privacy and terms</h2>
-<p><a href="/couchdial/privacy/">Privacy Policy</a>. Short version: we collect no data. Terms of Use: <a href="{eula}">Apple's Standard License Agreement (EULA)</a>.</p>
+<p><a href="/couchdial/privacy/">Privacy Policy</a>. Short version: no tracking or analytics; only anonymous crash and performance reports. Terms of Use: <a href="{eula}">Apple's Standard License Agreement (EULA)</a>.</p>
 """
 
     support_ru = f"""<h1>Поддержка {A}</h1>
@@ -340,9 +348,9 @@ def couchdial():
 <p><b>Как перенести источники на Apple TV?</b><br>С одним Apple Account войдите в iCloud на обоих устройствах — источники с включённым <b>«Показывать на Apple TV»</b> появятся сами. С любым Apple Account выберите на Apple TV <b>«Сканировать код»</b> и отсканируйте его камерой iPhone. Когда {A} открыт на Apple TV, iPhone также предлагает <b>«Отправить на Apple TV»</b>.</p>
 <p><b>Как отменить подписку?</b><br>Подписками управляет Apple: на iPhone или iPad — <b>Настройки → ваше имя → Подписки</b>; на Apple TV — <b>Настройки → Пользователи и учётные записи → ваша учётная запись → Подписки</b>. Отмените не позже чем за 24 часа до конца периода или пробного периода. Удаление приложения подписку не отменяет. Подробнее — в <a href="{cancel}">инструкции Apple</a>. Возврат денег: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
 <p><b>Как восстановить покупку?</b><br>Войдите в Apple Account, с которого покупали Pro, и откройте <b>Настройки → Покупки → Восстановить покупку</b>. Pro работает на всех устройствах с этим Apple Account и у членов семьи через «Семейный доступ».</p>
-<p><b>Как удалить мои данные?</b><br>Удалите источник на iPhone, iPad или Mac — он исчезнет со всех устройств и из iCloud. Удалите приложение — исчезнут локальные данные и логины в связке ключей. Чтобы стереть всё из iCloud, откройте <b>Настройки → ваше имя → iCloud → Управление хранилищем</b>, выберите {A} и удалите данные. У нас ваших данных нет.</p>
+<p><b>Как удалить мои данные?</b><br>Удалите источник на iPhone, iPad или Mac — он исчезнет со всех устройств и из iCloud. Удалите приложение — исчезнут локальные данные и логины в связке ключей. Чтобы стереть всё из iCloud, откройте <b>Настройки → ваше имя → iCloud → Управление хранилищем</b>, выберите {A} и удалите данные. Кроме анонимных отчётов о сбоях, которые хранятся в Sentry не дольше 90 дней, ваших данных у нас нет.</p>
 <h2>Конфиденциальность и условия</h2>
-<p><a href="/couchdial/ru/privacy/">Политика конфиденциальности</a>. Коротко: мы не собираем данные. Условия использования: <a href="{eula}">стандартное лицензионное соглашение Apple (EULA)</a>.</p>
+<p><a href="/couchdial/ru/privacy/">Политика конфиденциальности</a>. Коротко: без слежки и аналитики, только анонимные отчёты о сбоях и производительности. Условия использования: <a href="{eula}">стандартное лицензионное соглашение Apple (EULA)</a>.</p>
 """
 
     page("couchdial/privacy", "en", f"{A} Privacy Policy", privacy_en, "couchdial", "privacy")
